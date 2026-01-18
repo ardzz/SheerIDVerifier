@@ -1,0 +1,74 @@
+[project]
+name = "sheerid-verifier"
+version = "2.0.0"
+description = "SheerID Student Verification Tool for Google One (Gemini)"
+requires-python = ">=3.11"
+authors = [
+    {name = "Reky"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["sheerid", "verification", "student", "gemini", "google-one"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "httpx[socks]>=0.27.0",
+    "rich>=13.0.0",
+    "Pillow>=10.0.0",
+    "fake-useragent>=1.5.0",
+    "faker>=24.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
+]
+tls = [
+    "curl_cffi>=0.7.0",
+]
+playwright = [
+    "playwright>=1.40.0",
+]
+full = [
+    "curl_cffi>=0.7.0",
+    "playwright>=1.40.0",
+]
+
+[project.scripts]
+sheerid = "sheerid_verifier.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["sheerid_verifier"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# W291, W293: HTML template has intentional whitespace in f-string
+"sheerid_verifier/services/transcript_html.py" = ["W291", "W293"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
