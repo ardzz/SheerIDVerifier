@@ -272,21 +272,21 @@ def generate_class_schedule_html(
             padding: 0;
             box-sizing: border-box;
         }}
-        
+
         body {{
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: #f5f5f5;
             color: #333;
             line-height: 1.5;
         }}
-        
+
         .container {{
             max-width: 1100px;
             margin: 0 auto;
             background: #fff;
             min-height: 100vh;
         }}
-        
+
         /* Header */
         .header {{
             background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
@@ -296,22 +296,22 @@ def generate_class_schedule_html(
             justify-content: space-between;
             align-items: center;
         }}
-        
+
         .header h1 {{
             font-size: 22px;
             font-weight: 600;
         }}
-        
+
         .header .student-info {{
             text-align: right;
             font-size: 14px;
         }}
-        
+
         .header .student-name {{
             font-weight: 600;
             font-size: 16px;
         }}
-        
+
         /* Term Banner */
         .term-banner {{
             background: #e8f4fd;
@@ -321,23 +321,23 @@ def generate_class_schedule_html(
             justify-content: space-between;
             align-items: center;
         }}
-        
+
         .term-banner h2 {{
             color: #2b6cb0;
             font-size: 18px;
             font-weight: 600;
         }}
-        
+
         .term-banner .term-dates {{
             color: #4a5568;
             font-size: 14px;
         }}
-        
+
         /* Content */
         .content {{
             padding: 25px 30px;
         }}
-        
+
         .schedule-header {{
             display: flex;
             justify-content: space-between;
@@ -346,12 +346,12 @@ def generate_class_schedule_html(
             padding-bottom: 15px;
             border-bottom: 1px solid #e2e8f0;
         }}
-        
+
         .schedule-header h3 {{
             font-size: 16px;
             color: #2d3748;
         }}
-        
+
         .enrollment-status {{
             display: inline-flex;
             align-items: center;
@@ -362,7 +362,7 @@ def generate_class_schedule_html(
             font-size: 13px;
             font-weight: 600;
         }}
-        
+
         .enrollment-status::before {{
             content: "";
             display: inline-block;
@@ -372,18 +372,18 @@ def generate_class_schedule_html(
             border-radius: 50%;
             margin-right: 8px;
         }}
-        
+
         /* Schedule Table */
         .schedule-table {{
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
         }}
-        
+
         .schedule-table thead {{
             background: #f7fafc;
         }}
-        
+
         .schedule-table th {{
             text-align: left;
             padding: 12px 10px;
@@ -394,52 +394,52 @@ def generate_class_schedule_html(
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }}
-        
+
         .schedule-table td {{
             padding: 14px 10px;
             border-bottom: 1px solid #e2e8f0;
             vertical-align: top;
         }}
-        
+
         .schedule-table tbody tr:hover {{
             background: #f7fafc;
         }}
-        
+
         .course-code {{
             font-weight: 600;
             color: #2b6cb0;
             white-space: nowrap;
         }}
-        
+
         .course-title {{
             color: #2d3748;
         }}
-        
+
         .course-credits {{
             text-align: center;
             font-weight: 500;
         }}
-        
+
         .course-days {{
             font-weight: 500;
             color: #4a5568;
         }}
-        
+
         .course-time {{
             white-space: nowrap;
             color: #4a5568;
         }}
-        
+
         .course-location {{
             color: #718096;
             font-size: 13px;
         }}
-        
+
         .course-instructor {{
             color: #718096;
             font-size: 13px;
         }}
-        
+
         /* Summary */
         .schedule-summary {{
             margin-top: 25px;
@@ -450,29 +450,29 @@ def generate_class_schedule_html(
             justify-content: space-between;
             align-items: center;
         }}
-        
+
         .summary-item {{
             text-align: center;
         }}
-        
+
         .summary-item .label {{
             font-size: 12px;
             color: #718096;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }}
-        
+
         .summary-item .value {{
             font-size: 24px;
             font-weight: 700;
             color: #2d3748;
             margin-top: 4px;
         }}
-        
+
         .summary-item .value.credits {{
             color: #2b6cb0;
         }}
-        
+
         /* Footer */
         .footer {{
             margin-top: 30px;
@@ -483,7 +483,7 @@ def generate_class_schedule_html(
             display: flex;
             justify-content: space-between;
         }}
-        
+
         .footer .generated {{
             color: #718096;
         }}
@@ -499,20 +499,20 @@ def generate_class_schedule_html(
                 <div>ID: {student_id_safe}</div>
             </div>
         </div>
-        
+
         <!-- Term Banner -->
         <div class="term-banner">
             <h2>{semester} {year} - Registered Classes</h2>
             <div class="term-dates">{start_date} - {end_date}</div>
         </div>
-        
+
         <!-- Content -->
         <div class="content">
             <div class="schedule-header">
                 <h3>My Class Schedule</h3>
                 <span class="enrollment-status">Enrolled</span>
             </div>
-            
+
             <!-- Schedule Table -->
             <table class="schedule-table">
                 <thead>
@@ -530,7 +530,7 @@ def generate_class_schedule_html(
                     {course_rows}
                 </tbody>
             </table>
-            
+
             <!-- Summary -->
             <div class="schedule-summary">
                 <div class="summary-item">
@@ -550,7 +550,7 @@ def generate_class_schedule_html(
                     <div class="value">Full-Time</div>
                 </div>
             </div>
-            
+
             <!-- Footer -->
             <div class="footer">
                 <span>Student Information System</span>

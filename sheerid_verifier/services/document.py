@@ -846,8 +846,8 @@ def _generate_class_schedule_playwright(
     student_id: str,
 ) -> bytes:
     """Generate class schedule using Playwright HTML renderer."""
-    from sheerid_verifier.services.html_renderer import render_html_to_png
     from sheerid_verifier.services.class_schedule_html import generate_class_schedule_html
+    from sheerid_verifier.services.html_renderer import render_html_to_png
 
     # Generate HTML from template
     html_content = generate_class_schedule_html(
@@ -873,9 +873,9 @@ def _generate_class_schedule_pillow(
 ) -> bytes:
     """Generate class schedule using Pillow (fallback)."""
     from sheerid_verifier.services.class_schedule_html import (
+        _generate_schedule_courses,
         get_current_semester,
         get_semester_dates,
-        _generate_schedule_courses,
     )
 
     w, h = TRANSCRIPT_WIDTH, 700

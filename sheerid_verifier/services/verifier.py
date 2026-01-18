@@ -7,6 +7,8 @@ import re
 import time
 from typing import TYPE_CHECKING, Any
 
+from rich.progress import BarColumn, Progress, SpinnerColumn, TextColumn, TimeRemainingColumn
+
 from sheerid_verifier import console
 from sheerid_verifier.config import (
     DOCUMENT_TYPE,
@@ -32,7 +34,6 @@ from sheerid_verifier.services.http_client import HttpClient
 from sheerid_verifier.services.stats import Stats
 from sheerid_verifier.utils.fingerprint import generate_fingerprint
 from sheerid_verifier.utils.headers import get_headers
-from rich.progress import Progress, SpinnerColumn, BarColumn, TextColumn, TimeRemainingColumn
 
 if TYPE_CHECKING:
     from sheerid_verifier.models.university import University
